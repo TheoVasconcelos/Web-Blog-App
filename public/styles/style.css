@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(172, 43, 59);
+  background: linear-gradient(
+    90deg,
+    rgba(172, 43, 59, 1) 19%,
+    rgba(9, 73, 121, 1) 65%,
+    rgba(0, 255, 209, 1) 100%
+  );
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* background-color: #f2f2f2; */
+  position: relative;
+}
+
+.sign-up {
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.sign-up:hover {
+  background-color: transparent !important;
+}
+
+.login {
+  min-width: 300px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  color: black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    text-align: center;
+    padding: 10px;
+  }
+}
+
+.login-form-group {
+  margin-bottom: 15px;
+}
+
+.login-form-group label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+.login-button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:active {
+  background-color: #0056b3;
+  transform: scale(0.98);
+}
+
+.post-container {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
+
+.post-form-group label {
+  margin: 15px 0;
+  display: block;
+  font-weight: bold;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  resize: none;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.post-button-container {
+  display: flex;
+  justify-content: end;
+  margin-top: 8px;
+}
+
+.post-button {
+  padding: 15px 40px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.post-button:active {
+  background-color: #0056b3;
+  transform: scale(0.98);
+}
+
+.user-info {
+  padding: 5px;
+  margin-left: 8px;
+
+  p {
+    margin-left: 2px;
+  }
+}
+
+.tweets-container {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.modify-delete {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+
+  button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:active {
+    background-color: #0056b3;
+    transform: scale(0.98);
+  }
+}
+
+.modify-post {
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+
+  button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:active {
+    background-color: #0056b3;
+    transform: scale(0.98);
+  }
+}
+
+.post-user {
+  margin-bottom: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.no-post-info {
+  text-align: center;
+}

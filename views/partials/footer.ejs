@@ -1,0 +1,65 @@
+<script>
+    //# sourceURL=test.js
+    let deleteButtonArray = document.querySelectorAll(".delete");
+    let editButtonArray = document.querySelectorAll(".edit");
+    let editor = document.querySelector(".post-user-modify");
+    let postButtons = document.querySelector(".modify-delete");
+    let cancelButton = document.querySelectorAll(".cancel");
+    let okButton = document.querySelectorAll(".ok");
+
+
+    deleteButtonArray.forEach(function (event) {
+        event.addEventListener("click", function () {
+            const id = event.dataset.id;
+            const url = "http://localhost:3000/post/" + id;
+            var xhr = new XMLHttpRequest()
+            xhr.open("DELETE", url);
+            xhr.send();
+            location.reload();
+        });
+    });
+
+
+
+    editButtonArray.forEach(function (item, index) {
+
+        item.addEventListener("click", function (event) {
+            let target = event.target;
+            let editPost = target.parentNode.parentElement;
+
+            editPost.children[1].classList.toggle("hidden");
+            editPost.children[2].classList.toggle("hidden");
+
+        })
+
+    });
+
+
+    cancelButton.forEach(function (item, index) {
+
+        item.addEventListener("click", function (event) {
+            let target = event.target;
+            let cancelPost = target.parentNode.parentElement.parentElement;
+
+            cancelPost.children[1].classList.toggle("hidden");
+            cancelPost.children[2].classList.toggle("hidden");
+
+        })
+    })
+
+    okButton.forEach(function (item, index) {
+
+        item.addEventListener("click", function (event) {
+            let target = event.target;
+            let okPost = target.parentNode.parentElement.parentElement;
+
+            okPost.children[1].classList.toggle("hidden");
+            okPost.children[2].classList.toggle("hidden");
+        })
+    })
+
+</script>
+
+</body>
+
+</html>

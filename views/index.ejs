@@ -1,0 +1,90 @@
+<%- include("partials/header.ejs") %>
+    <section class="flex-post">
+        <div class="post-container">
+            <div class="post">
+                <div class="user">
+                    <div class="user-img"><img width="94" height="94"
+                            src="https://img.icons8.com/3d-fluency/94/user-male-circle.png" alt="user-male-circle" />
+                    </div>
+                    <div class="user-info">
+                        <% if(locals.username){ %>
+                            <h3 id="username">
+                                @<%= locals.username %>
+                            </h3>
+                            <% } else { %>
+
+                                <h3>Guest</h3>
+                                <% } %>
+                    </div>
+                </div>
+            </div>
+
+            <!-- to-do: add required to input -->
+            <form action="/post" method="POST">
+                <!-- <div class="post-form-group">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title">
+                </div> -->
+
+                <div class="post-form-group">
+                    <label for="mood">Mood:</label>
+                    <!-- <input type="text" id="mood" name="mood"> -->
+                    <select name="mood" id="mood">
+                        <option value="happy">Happy</option>
+                        <option value="sad">Sad</option>
+                        <option value="angry">Angry</option>
+                        <option value="confused">Confused</option>
+                        <option value="excited">Excited</option>
+                        <option value="bored">Bored</option>
+                        <option value="tired">Tired</option>
+                        <option value="nervous">Nervous</option>
+                    </select>
+                </div>
+                <div class="post-form-group">
+                    <label for="content">Content:</label>
+                    <textarea id="content" name="content" rows="3"></textarea>
+                </div>
+                <div class="post-button-container">
+                    <button class="post-button" type="submit">Post</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="tweets-container">
+            <div class="tweets">
+                <% if(locals.posts){ %>
+                    <% locals.posts.forEach((post)=> { %>
+                        <div class="post-user">
+                            <div>
+                                <h5>Feeling: <%= post.mood %>
+                                </h5>
+                                </p>
+                                <p>
+                                    <%= post.content %>
+                                </p>
+                            </div>
+
+                            <div class="post-user-modify hidden">
+                                <form id="updateForm" action="/postUpdate" method="POST">
+                                    <input type="hidden" name="id" value="<%= post.id%>" />
+                                    <textarea class="modified-text" name="modContent"> <%= post.content %> </textarea>
+
+                                    <div class="modify-post">
+                                        <button class="ok" type="submit">OK</button>
+                                        <button class="cancel" data-id="<%= post.id %>">Cancel</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="modify-delete hide">
+                            <button class="edit">Edit</button>
+                            <button class="delete" data-id="<%= post.id %>">Delete</button>
+                        </div>
+            </div>
+            <% }); %>
+        </div>
+    </section>
+    <% } else { %>
+        <h3 class="no-post-info">No Posts to Show</h3>
+        <% } %>
+            <%- include("partials/footer.ejs") %>
